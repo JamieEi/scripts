@@ -2,5 +2,5 @@
 
 set -e
 
-task status:pending planned.not: export | jq -c '.[]' | ~/.task/hooks/set-eta.py | task import
+task 'status:pending (planned.not: or ACTIVE)' export | jq -c '.[]' | ~/.task/hooks/set-eta.py | task import
 
